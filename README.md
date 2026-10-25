@@ -1,1 +1,1 @@
-Im just some guy trying to learn node js and git and stuff or something
+download the whole zip and extract it before starting it with >node index
