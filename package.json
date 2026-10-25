@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/chicken6250/node-js-thingy-I-guess/issues"
   },
-  "homepage": "https://github.com/chicken6250/node-js-thingy-I-guess#readme"
+  "homepage": "https://github.com/chicken6250/node-js-thingy-I-guess#readme",
+  "dependencies": {
+    "connect": "^3.7.0"
+  }
 }
