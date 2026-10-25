@@ -23,5 +23,22 @@ console.log("pretty sure this logs something in the browser I guess")
 
 </script>
 
+<body>
+
+    <div id="innerdiv"></div>
+    <button id="mybutton">
+        the attack button
+    </button>
+    <script>
+        document.getElementById("mybutton").
+            addEventListener("click", function () {
+         document.getElementById("innerdiv").
+            innerHTML += "<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAIAAAAiOjnJAAAAAXNSR0IB2cksfwAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAAuIwAALiMBeKU/dgAAAAd0SU1FB+oKGQgpG9yalU8AAAQpSURBVHja7d1JctswEEBRMIX7X5lZsOJKJIqhMBDT+0s7oU31dwNoTNu+7wEozS8fAYgFYoFYALFALBALIBaIBWIBxAKxQCyAWCAWiAU8Kta2bT4stMxYFEQIIWYaY2UzcsV6d2jbtm3buIXCTSGlUCBjdcV7u8zyecRq1U/X/k4o1otMzwe4oFXN34VY/4ShYQBK5cjjOS8vIhH2MirMlyPhmfm/xieB9n0/FQ4DdN7fg/pkLP/7s45vSV2DzRX2ELA7v8CRukwhjCFWfpwyvfzqv+/7/tMyoveM9aln022y5FbvYl3E9TpyReKqz2Q9Vo99MklrVLFOg5dv1fHM/Odwa56MVSRXEWJysa47WMe3iozwP81Mb38Q7zB0gTSt5vkjQdpQ8VTfly9mFv3RvvJ+J2ynKqQpdb/ymSCZQWVFsb4qLdbrRRVcHv1JsmA947gL/ZLLlQ3zq0zWaYHUNh4Zq0o+6GE5l1WsEzaFwqApnIdKNVLpytkNGkFisYpYa7aGrCJWebdYRazybrHq609sqc8rwQ8bwohV3i2JiliF3ZKoiFXSrcnmnYjV8hiIzAWGIFb5gyRALAR1LBALIBaI5UIDYgGriWVOhlggFkAsEAvLi2UMjxkyVj8HXPmLmkqs43Bs0SKWc2aJBXIv3scSrdVvsS8rwTEt8/cZuMLW/9gi1jjTtuDrTTbZt87Vm7GGAYdb9S4WHH3jxgqbzGKlvJLv1mS56uKCqhp6NVc29tlaXTyzVDrsZ+lOwds3Xy6JbdjyRsuh0oLX53u9JKrTlveZIzxj7dSyuI733+UBX683f5c9SzYu+8eNqhlL5V1ZP3Qn1p1sNGVJs8+X6qpx+PVYGDIP1JPPggsE8t1ap0I9a9KKj72Dc/SCSWhYP9MsY1W95K3PpOUwrepiOblUuhqyKeytoTmdZWfPkH2s/jsxulmjdt5PI/dV90vs17oTOs2tVq3PMyOJIiuo+mmgYxhnljT5o69qxvXD74xwp1xHGsPy8/BNulnTVy5iCCqZ1ffGvP+DGhsCuhLU5Elue3enpXty6bZR4Sr7+NYcmUZypA1OG/a4h5ikJ1bi4PQrqxZcok2swQanowiqj2X+h1jGCuO0p8QaJmmN1UsjFoi1cNIablBJrAHcGrFUQaze3Rq0AEYs1QdirefWuPV6qxs63VI2+uo/Ytm3SCzoY4FYALFALBALIBaIBWIBxAKxQCyAWCAWiAUQC8QCsQBigVggFkAsEAvEAogFYoFYALFALBALIBaIBWIBxAKxQCyAWCAWiAUQC8QCsQBigVggFkAsEAvEAogFYoFYALFALBALIBaIBWIBxAKxQCyAWCAWiAUQC8QCsQBigVggFkAsEAvEAogFYoFYALFALBALIBaIBWIBxAKxQCyAWCAWiAViAcTCKPwGzAHIiVDqTI8AAAAASUVORK5CYII=" alt="" />";
+        });
+    </script>
+</body>
+
+
+
 </html>
 
