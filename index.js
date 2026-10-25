@@ -2,7 +2,7 @@ console.log("nice it worked");
 console.log("idk if anyone is reading this but maybe if I actually figured this you you can do a thing in a seond");
 const {execSync} = require('child_process');
 
-execSync('sleep 5'); // block process for 1 second.
+execSync('sleep 5'); // block process for 5 of secondy wecondies.
 console.log("did it wait ?")
 execSync('sleep 3')
 console.log("I guess it did I think?")
@@ -11,3 +11,29 @@ console.log("hopefully nothing really terrible goes wrong or something")
 console.log("Ima go learn how to actually use node js now.")
 execSync('sleep 3')
 console.log("Pretty sure I kinda just can't really do this at all maybe idk")
+execSync('sleep 2')
+console.log("actually im pretty sure I can just make a website or something for the thing")
+console.log("If I can actually figure this out you should be able to open a website or something in a second ?")
+
+
+var fork = require('child_process').fork;
+var child = fork('./newFile.js');
+
+
+var http = require('http'),
+    fs = require('fs');
+
+
+fs.readFile('./index.html', function (err, html) {
+    if (err) {
+        throw err; 
+    }       
+    http.createServer(function(request, response) {  
+        response.writeHeader(200, {"Content-Type": "text/html"});  
+        response.write(html);  
+        response.end();  
+    }).listen(8080);
+});
+
+
+
