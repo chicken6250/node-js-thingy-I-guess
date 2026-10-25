@@ -16,24 +16,54 @@ console.log("actually im pretty sure I can just make a website or something for 
 console.log("If I can actually figure this out you should be able to open a website or something in a second ?")
 
 
-var fork = require('child_process').fork;
-var child = fork('./newFile.js');
 
 
-var http = require('http'),
-    fs = require('fs');
+var path = require('path');
+var connect = require('connect');
+var app = connect();
+var fs = require('fs');
 
+var dir = path.join(__dirname);
 
-fs.readFile('./index.html', function (err, html) {
-    if (err) {
-        throw err; 
-    }       
-    http.createServer(function(request, response) {  
-        response.writeHeader(200, {"Content-Type": "text/html"});  
-        response.write(html);  
-        response.end();  
-    }).listen(8080);
+var mime = {
+    html: 'text/html',
+    txt: 'text/plain',
+    css: 'text/css',
+    gif: 'image/gif',
+    jpg: 'image/jpeg',
+    png: 'image/png',
+    svg: 'image/svg+xml',
+    js: 'application/javascript'
+};
+
+app.use(function (req, res) {
+    var reqpath = req.url.toString().split('?')[0];
+    if (req.method !== 'GET') {
+        res.statusCode = 501;
+        res.setHeader('Content-Type', 'text/plain');
+        return res.end('Method not implemented');
+    }
+    var file = path.join(dir, reqpath.replace(/\/$/, '/index.html'));
+    if (file.indexOf(dir + path.sep) !== 0) {
+        res.statusCode = 403;
+        res.setHeader('Content-Type', 'text/plain');
+        return res.end('Forbidden');
+    }
+    var type = mime[path.extname(file).slice(1)] || 'text/plain';
+    var s = fs.createReadStream(file);
+    s.on('open', function () {
+        res.setHeader('Content-Type', type);
+        s.pipe(res);
+    });
+    s.on('error', function () {
+        res.setHeader('Content-Type', 'text/plain');
+        res.statusCode = 404;
+        res.end('Not found');
+    });
 });
 
+app.listen(8080, function () {
+    console.log('Listening on http://localhost:8080/');
+});
 
 
