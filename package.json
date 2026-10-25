@@ -1,0 +1,21 @@
+{
+  "name": "i-might-do-something-with-this",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chicken6250/node-js-thingy-I-guess.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/chicken6250/node-js-thingy-I-guess/issues"
+  },
+  "homepage": "https://github.com/chicken6250/node-js-thingy-I-guess#readme"
+}
