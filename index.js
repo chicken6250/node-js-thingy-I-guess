@@ -2,7 +2,7 @@ console.log("nice it worked");
 console.log("idk if anyone is reading this but maybe if I actually figured this you you can do a thing in a seond");
 const {execSync} = require('child_process');
 
-execSync('sleep 5'); // block process for 1 second.
+execSync('sleep 5'); // block process for 5 of secondy wecondies.
 console.log("did it wait ?")
 execSync('sleep 3')
 console.log("I guess it did I think?")
@@ -20,11 +20,20 @@ var fork = require('child_process').fork;
 var child = fork('./newFile.js');
 
 
-var http = require("http");
-http.createServer(function(request, response) {
-  response.writeHead(200, {"Content-Type": "text/plain"});
-  response.write("Hello World");
-  response.end();
-}).listen(8080);
+var http = require('http'),
+    fs = require('fs');
+
+
+fs.readFile('./index.html', function (err, html) {
+    if (err) {
+        throw err; 
+    }       
+    http.createServer(function(request, response) {  
+        response.writeHeader(200, {"Content-Type": "text/html"});  
+        response.write(html);  
+        response.end();  
+    }).listen(8080);
+});
+
 
 
