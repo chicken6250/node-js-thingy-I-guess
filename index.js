@@ -13,10 +13,12 @@ execSync('sleep 3')
 console.log("Pretty sure I kinda just can't really do this at all maybe idk")
 execSync('sleep 2')
 console.log("actually im pretty sure I can just make a website or something for the thing")
-console.log("echo If I can actually figure this out you should be able to open a website or something in a second ?")
-//-- Source - https://stackoverflow.com/q/29815207
-//-- Posted by nealous3
-//-- Retrieved 2026-10-25, License - CC BY-SA 3.0
+console.log("If I can actually figure this out you should be able to open a website or something in a second ?")
+
+
+var fork = require('child_process').fork;
+var child = fork('./newFile.js');
+
 
 var http = require("http");
 http.createServer(function(request, response) {
@@ -25,4 +27,4 @@ http.createServer(function(request, response) {
   response.end();
 }).listen(8080);
 
-console.log("I really need to look at some documentation . . .")
+
