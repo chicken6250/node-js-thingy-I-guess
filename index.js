@@ -16,7 +16,9 @@ console.log("actually im pretty sure I can just make a website or something for 
 console.log("If I can actually figure this out you should be able to open a website or something in a second ?")
 
 
+const { fork } = require('child_process');
 
+const child = fork('newFile.js');
 
 var path = require('path');
 var connect = require('connect');
@@ -63,7 +65,7 @@ app.use(function (req, res) {
 });
 
 app.listen(8080, function () {
-    console.log('Listening on http://localhost:8080/');
+
 });
 
 
