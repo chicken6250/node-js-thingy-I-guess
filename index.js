@@ -20,12 +20,12 @@ const { fork } = require('child_process');
 
 const child = fork('newFile.js');
 
-var path = require('path');
+var path = require('path');//lets you connect to website thing
 var connect = require('connect');
 var app = connect();
 var fs = require('fs');
 
-var dir = path.join(__dirname);
+var dir = path.join(__dirname); 
 
 var mime = {
     html: 'text/html',
